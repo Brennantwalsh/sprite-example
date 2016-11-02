@@ -1,5 +1,7 @@
 var xAxis = 0;
 var yAxis = 0;
+var src = "soldier.png";
+
 function hello() {
 
 (function() {
@@ -108,8 +110,8 @@ function hello() {
   // Create sprite
   coin = sprite({
     context: canvas.getContext("2d"),
-    width: 822,
-    height: 1000,
+    width: 256,
+    height: 100,
     image: coinImage,
     numberOfFrames: 4,
     ticksPerFrame: 10
@@ -117,25 +119,29 @@ function hello() {
   
   // Load sprite sheet
   coinImage.addEventListener("load", gameLoop);
-  coinImage.src = "assets/hobbit.png";
+  coinImage.src = "assets/" + src;
 
 } ());
 
 }
 function movementRight() {
   xAxis += 100;
+  src = "soldier.png";
   hello();
 }
 function movementDown() {
   yAxis += 100;
+  src = "soldier_down.png";
   hello();
 }
 function movementLeft() {
   xAxis -= 100;
+  src = "soldier_left.png";
   hello();
 }
 function movementUp() {
   yAxis -= 100;
+  src = "soldier_up.png";
   hello();
 }
 
